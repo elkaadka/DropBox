@@ -1,0 +1,32 @@
+{
+    "name": "kanel/dropbox",
+    "description": "A simple dropbox sdk. one feature at a time.",
+    "minimum-stability": "stable",
+    "require" : {
+        "php" : ">=7.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "kanel/mapper": "^1.1"
+    },
+    "repositories" : [ {
+        "type" : "composer",
+        "url" : "https://packagist.org/"
+    } ],
+    "autoload-dev" : {
+        "psr-4" : {
+            "Kanel\\DropBox\\" : "src/",
+            "Kanel\\DropBox\\Tests\\" : "tests/"
+        }
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Kanel\\DropBox\\" : "src/"
+        }
+    },
+    "authors" : [ {
+        "name" : "Adil El Kanabi",
+        "email" : "adil.kanabi@gmail.com"
+    } ],
+    "require-dev": {
+        "phpspec/phpspec": "^4.3"
+    }
+}
