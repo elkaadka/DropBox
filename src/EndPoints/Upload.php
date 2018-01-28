@@ -64,7 +64,7 @@ trait Upload
                     $args["client_modified"] = $parameters->getClientModified();
                 }
                 $response = $this->guzzle->post(
-                    DropBox::URL . DropBox::URL_FILE_UPLOAD,
+                    DropBox::URL_FILE_UPLOAD,
                     [
                         'headers' => [
                             'Authorization'   => 'Bearer ' . $this->accessToken,
@@ -85,7 +85,7 @@ trait Upload
 
             try {
                 $response = $this->guzzle->post(
-                    DropBox::URL.DropBox::URL_UPLOAD_START_SESSION,
+                    DropBox::URL_UPLOAD_START_SESSION,
                     [
                         'headers' => [
                             'Authorization'   => 'Bearer ' . $this->accessToken,
@@ -108,7 +108,7 @@ trait Upload
             while($stream->read(DropBox::URL_UPLOAD_CHUNK_MAX_SIZE)) {
                 try {
                     $this->guzzle->post(
-                        \Kanel\DropBox\Client::URL.DropBox::URL_UPLOAD_APPEND,
+                        DropBox::URL_UPLOAD_APPEND,
                         [
                             'headers' => [
                                 'Authorization'   => 'Bearer ' . $this->accessToken,
@@ -127,7 +127,7 @@ trait Upload
 
             try {
                 $response = $this->guzzle->post(
-                    \Kanel\DropBox\Client::URL.DropBox::URL_UPLOAD_FINISH_SESSION,
+                    DropBox::URL_UPLOAD_FINISH_SESSION,
                     [
                         'headers' => [
                             'Authorization'   => 'Bearer ' . $this->accessToken,
